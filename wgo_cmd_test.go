@@ -773,7 +773,7 @@ func TestHelp(t *testing.T) {
 	}
 }
 
-func Diff[T any](got, want T) string {
+func Diff(got, want interface{}) string {
 	opts := cmp.Options{
 		cmp.Exporter(func(typ reflect.Type) bool { return true }),
 		cmpopts.EquateEmpty(),
